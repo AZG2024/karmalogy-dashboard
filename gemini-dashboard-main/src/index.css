@@ -1,0 +1,145 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 270 40% 98%;
+    --foreground: 270 20% 20%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 270 20% 20%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 270 20% 20%;
+
+    --primary: 270 55% 75%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 270 45% 94%;
+    --secondary-foreground: 270 40% 40%;
+
+    --muted: 270 20% 96%;
+    --muted-foreground: 270 40% 60%;
+
+    --accent: 270 40% 96%;
+    --accent-foreground: 270 40% 40%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 270 30% 90%;
+    --input: 270 30% 90%;
+    --ring: 270 55% 75%;
+
+    --radius: 0.75rem;
+
+    --sidebar-background: 270 30% 99%;
+    --sidebar-foreground: 270 20% 20%;
+    --sidebar-primary: 270 55% 75%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 270 40% 95%;
+    --sidebar-accent-foreground: 270 40% 40%;
+    --sidebar-border: 270 30% 92%;
+    --sidebar-ring: 270 55% 75%;
+  }
+
+  .dark {
+    --background: 270 25% 12%;
+    --foreground: 270 10% 95%;
+
+    --card: 270 25% 16%;
+    --card-foreground: 270 10% 95%;
+
+    --popover: 270 25% 16%;
+    --popover-foreground: 270 10% 95%;
+
+    --primary: 270 55% 75%;
+    --primary-foreground: 270 10% 99%;
+
+    --secondary: 270 30% 20%;
+    --secondary-foreground: 270 10% 95%;
+
+    --muted: 270 30% 20%;
+    --muted-foreground: 270 10% 70%;
+
+    --accent: 270 30% 20%;
+    --accent-foreground: 270 10% 95%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 270 10% 95%;
+
+    --border: 270 30% 25%;
+    --input: 270 30% 25%;
+    --ring: 270 55% 75%;
+
+    --sidebar-background: 270 25% 16%;
+    --sidebar-foreground: 270 10% 95%;
+    --sidebar-primary: 270 55% 75%;
+    --sidebar-primary-foreground: 270 10% 99%;
+    --sidebar-accent: 270 30% 20%;
+    --sidebar-accent-foreground: 270 10% 95%;
+    --sidebar-border: 270 30% 25%;
+    --sidebar-ring: 270 55% 75%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-manrope;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white bg-opacity-20 backdrop-blur-lg rounded-2xl border border-white border-opacity-30 shadow-glass;
+  }
+  
+  .hover-lift {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-lg;
+  }
+  
+  .gem-gradient {
+    @apply bg-gradient-to-br from-gem-purple to-gem-secondary;
+  }
+  
+  .soft-shadow {
+    @apply shadow-[0_4px_16px_rgba(160,138,227,0.15)];
+  }
+  
+  .animated-border {
+    @apply relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-gem-primary after:transition-all after:duration-300 hover:after:w-full;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.02);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(183, 148, 244, 0.3);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(183, 148, 244, 0.5);
+}
+
+/* Font family */
+.font-manrope {
+  font-family: 'Manrope', sans-serif;
+}
